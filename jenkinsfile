@@ -25,7 +25,7 @@ pipeline {
               sh 'docker push mdrajibkhan/myimage:v1'
             }
             }
-      stage('Login to stg-server and deploy the application') {
+      stage('Image Pull and deploy the application') {
          steps {
 	   sh 'docker rm web -f'
 	   sh 'docker pull mdrajibkhan/myimage:v1'
