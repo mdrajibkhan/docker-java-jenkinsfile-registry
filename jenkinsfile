@@ -6,7 +6,7 @@ pipeline {
     stages {
       stage('Scm Checkout') {
         steps {
-          git branch: 'main', url: 'https://github.com/mdrajibkhan/docker-java-jenkinsfile-registry.git'
+          git branch: 'staging', url: 'https://github.com/mdrajibkhan/docker-java-jenkinsfile-registry.git'
             }
             }
       stage('Build App') {
@@ -21,7 +21,7 @@ pipeline {
             }
       stage('Push the Docker Images') {
          steps {
-	   withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dockerHubPwd')]) {
+	   withCredentials([usernameColonPassword(credentialsId: 'docker-hub-pwd', variable: 'dockerhub-pwd')]) {
 	      sh "docker login -u mdrajibkhan -p ${dockerHubPwd}"
 		}
               sh 'docker push mdrajibkhan/myimage:v1'
