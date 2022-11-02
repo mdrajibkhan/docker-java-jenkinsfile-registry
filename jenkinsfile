@@ -14,7 +14,7 @@ pipeline {
             }
       stage('Build Docker Images') {
         steps {
-          sh 'docker build -t mdrajibkhan/myimage:v1 . ${env.BUILD_ID}'
+          sh 'docker build -t mdrajibkhan/myimage:v1 . '
             }
             }
       stage('Push the Docker Images') {
