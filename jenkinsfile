@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-    label 'slave01'
-	}
+  agent any
 
     stages {
       stage('Scm Checkout') {
