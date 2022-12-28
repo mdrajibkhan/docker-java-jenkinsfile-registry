@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('Building Docker Images') {
+      steps {
+        sh 'docker build -t mdrajibkhan/myimage:v1 .'
+      }
+    }
+
   }
 }
