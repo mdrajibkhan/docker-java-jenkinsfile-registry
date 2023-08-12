@@ -9,7 +9,7 @@ pipeline {
             }
       stage('Build App') {
         steps {
-          sh 'mvn clean package'
+          sh 'mvn clean install -Ddmaven.multiModuleProjectDirectory=/path/to/your/project'
             }
             }
       stage('Build Docker Images') {
