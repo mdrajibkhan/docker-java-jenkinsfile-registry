@@ -9,7 +9,7 @@ pipeline {
             }
       stage('Build App') {
         steps {
-          sh 'mvn clean install -Ddmaven.multiModuleProjectDirectory=/path/to/your/project'
+          sh 'mvn clean install -Ddmaven.multiModuleProjectDirectory=/var/lib/jenkins/workspace/java-jenkinsfile'
             }
             }
       stage('Build Docker Images') {
