@@ -27,7 +27,6 @@ pipeline {
             }
       stage('Image Pull and deploy the application') {
          steps {
-	   sh 'docker rm web -f'
 	   sh 'docker pull mdrajibkhan/myimage:v1'
 	   sh 'docker run --name web -dit -p 8081:8080 mdrajibkhan/myimage:v1'
 				
